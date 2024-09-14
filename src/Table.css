@@ -1,17 +1,13 @@
 /* Custom styling for the PrimeReact DataTable */
 
-
-  
-  /* Table title */
-  .table-title {
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #007ad9;
-    margin-bottom: 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 24px;
-  }
-  
-  
+/* Table title */
+.table-title {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #007ad9;
+  margin-bottom: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 24px;
+}

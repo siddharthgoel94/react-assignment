@@ -10,7 +10,7 @@ import Loading from "./Loading";
 
 import "primereact/resources/primereact.min.css"; // Core CSS for PrimeReact components
 import "primereact/resources/themes/lara-light-purple/theme.css"; // Or any other theme
-import './Table.css'
+import "./Table.css";
 
 const Table = () => {
   const [data, setData] = useState([]);
@@ -40,7 +40,7 @@ const Table = () => {
         const totalPages = Math.ceil(
           responseData.pagination.total / rowsPerPage
         );
-        setBitmaskArray(Array(totalPages+1).fill(0));
+        setBitmaskArray(Array(totalPages + 1).fill(0));
       }
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -64,15 +64,14 @@ const Table = () => {
 
   // Selection change handler
   const onSelectionChange = (e: any) => {
-    console.log(e);
+    
 
-    e.value // current status of selected rows
-    let newBitMask=0;
-    for(let row of e.value){
-       let index = data.findIndex((dataRow:any)=>dataRow.id===row.id)
-       newBitMask = (1<<index) | newBitMask
-       console.log(index);
-       
+    e.value; // current status of selected rows
+    let newBitMask = 0;
+    for (let row of e.value) {
+      let index = data.findIndex((dataRow: any) => dataRow.id === row.id);
+      newBitMask = (1 << index) | newBitMask;
+      
     }
     const newBitmaskArray = [...bitmaskArray];
     newBitmaskArray[pageNumber] = newBitMask;
@@ -107,12 +106,11 @@ const Table = () => {
     }
 
     setBitmaskArray(newBitmaskArray); // Update the bitmask array
-    op?.current?.hide()
+    op?.current?.hide();
   };
 
   // Header template for checkbox column with input overlay
   const headerTemplate = () => {
-    
     return (
       <div style={{ position: "relative" }}>
         <FaChevronDown
@@ -126,20 +124,18 @@ const Table = () => {
           onClick={(e) => op.current?.toggle(e)}
         />
         <OverlayPanel ref={op}>
-          
           <div style={{ position: "absolute", top: "8rem" }}>
-          <Card>
-            <label htmlFor="rowsInput">Select Rows:</label>
-            <InputNumber
-              value={selectCount}
-              onValueChange={(e) => setSelectCount(e.value??null)}
-              placeholder="Enter number"
-              style={{margin:"1rem"}}
-            />
-            <Button label="Submit" onClick={handleSelectRows}/>
+            <Card>
+              <label htmlFor="rowsInput">Select Rows:</label>
+              <InputNumber
+                value={selectCount}
+                onValueChange={(e) => setSelectCount(e.value ?? null)}
+                placeholder="Enter number"
+                style={{ margin: "1rem" }}
+              />
+              <Button label="Submit" onClick={handleSelectRows} />
             </Card>
           </div>
-          
         </OverlayPanel>
         Title
       </div>
@@ -149,10 +145,10 @@ const Table = () => {
   return (
     <div className="card">
       <div className="table-title">
-      <h2>React Assignment</h2>
+        <h2>React Assignment</h2>
       </div>
       {loading ? (
-        <Loading/>
+        <Loading />
       ) : (
         <DataTable
           value={data}
@@ -175,7 +171,7 @@ const Table = () => {
             selectionMode="multiple"
             headerStyle={{ width: "3rem" }}
           ></Column>
-          
+
           <Column
             field="title"
             header={headerTemplate()}

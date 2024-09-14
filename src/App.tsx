@@ -1,12 +1,11 @@
-import Table  from './Table'
-
+import Table from "./Table";
 
 function App() {
   return (
-    <> 
-<Table />
+    <>
+      <Table />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
