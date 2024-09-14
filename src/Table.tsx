@@ -112,6 +112,7 @@ const Table = () => {
 
   // Header template for checkbox column with input overlay
   const headerTemplate = () => {
+    
     return (
       <div style={{ position: "relative" }}>
         <FaChevronDown
@@ -131,7 +132,7 @@ const Table = () => {
             <label htmlFor="rowsInput">Select Rows:</label>
             <InputNumber
               value={selectCount}
-              onValueChange={(e) => setSelectCount(e.value)}
+              onValueChange={(e) => setSelectCount(e.value??null)}
               placeholder="Enter number"
               style={{margin:"1rem"}}
             />
@@ -160,6 +161,7 @@ const Table = () => {
           rows={rowsPerPage}
           totalRecords={totalRecords}
           lazy
+          selectionMode="multiple"
           onPage={onPageChange}
           showGridlines
           tableStyle={{ minWidth: "50rem" }}
