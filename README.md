@@ -4,7 +4,7 @@ This project demonstrates how to display paginated data from an API using PrimeR
 
 - **Server-side pagination**: Fetches data from the server for each page request.
 - **Row selection**: Allows the user to select rows across different pages and maintain the selections consistently.
-- **Bit manipulation for selection storage**: A unique app1roach using bit manipulation to store row selections efficiently.
+- **Bit manipulation for selection storage**: A unique approach using bit manipulation to store row selections efficiently.
 
 ---
 
